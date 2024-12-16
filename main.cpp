@@ -2,7 +2,7 @@
 #include <SDL2/SDL_ttf.h>
 
 #include <chrono>
-#include <iostream>
+#include <string>
 #define SDL_main main
 
 struct Vec2f{float x, y;};
@@ -136,14 +136,14 @@ int main(int argc, char *argv[])
 		SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
 		renderText(renderer, std::to_string(scorePlayer1), font, 100, 0);
 		renderText(renderer, std::to_string(scorePlayer2), font, 290, 0);
-		SDL_Rect ballShape{ball.x, ball.y, 20, 20};
-		SDL_Rect p1Shape{player1.x, player1.y, 10, 50};
-		SDL_Rect p2Shape{player2.x, player2.y, 10, 50};
-		SDL_Rect mid{200, 0, 1, 400};
-		SDL_RenderFillRect(renderer, &mid);
-		SDL_RenderFillRect(renderer, &ballShape);
-		SDL_RenderFillRect(renderer, &p1Shape);
-		SDL_RenderFillRect(renderer, &p2Shape);
+		SDL_FRect ballShape{ball.x, ball.y, 20, 20};
+		SDL_FRect p1Shape{player1.x, player1.y, 10, 50};
+		SDL_FRect p2Shape{player2.x, player2.y, 10, 50};
+		SDL_FRect mid{200, 0, 1, 400};
+		SDL_RenderFillRectF(renderer, &mid);
+		SDL_RenderFillRectF(renderer, &ballShape);
+		SDL_RenderFillRectF(renderer, &p1Shape);
+		SDL_RenderFillRectF(renderer, &p2Shape);
 		SDL_RenderPresent(renderer);
 		auto stopTime = std::chrono::high_resolution_clock::now();
 		dt = std::chrono::duration<float, std::chrono::milliseconds::period>(stopTime - startTime).count();
