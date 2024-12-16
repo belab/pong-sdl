@@ -4,7 +4,8 @@ Minimalistic implementation of pong with SDL. This project is using cmake and vc
 
 ## Setup
 
-Run vcpkg_setup.bat
+Run vcpkg_setup.bat.
+For additional dependencies, run ```vcpkg/vcpkg add port <package>```
 
 ### VSCode
 

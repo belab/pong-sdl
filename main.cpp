@@ -64,15 +64,15 @@ int main(int argc, char *argv[])
 	SDL_Init(SDL_INIT_VIDEO);
 	TTF_Init();
 
-	SDL_Window* window = SDL_CreateWindow("PONG", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 400, 400, SDL_WINDOW_SHOWN);
+	SDL_Window* window = SDL_CreateWindow("PONG-SDL", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 400, 400, SDL_WINDOW_SHOWN);
 	SDL_Renderer* renderer = SDL_CreateRenderer( window, -1, SDL_RENDERER_ACCELERATED);
 
 	Vec2f ball{100.0f, 200.0f};
 	Vec2f player1{20.0f, 200.0f};
 	Vec2f player2{370.0f, 200.0f};
 
-	TTF_Font* font = TTF_OpenFont("C:\\Windows\\Fonts\\arial.ttf", 30);
-	Vec2f ballSpeed{0.05f, 0.05f};
+	TTF_Font* font = TTF_OpenFont("lcd.14.otf", 30);
+	Vec2f ballSpeed{0.1f, 0.1f};
 	bool running = true;
 	float dt= 0.0f;
 	while (running)
